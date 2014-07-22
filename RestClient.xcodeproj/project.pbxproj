@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB01A2FD197E5CEF009DB749 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB01A2FC197E5CEF009DB749 /* RequestViewController.swift */; };
+		CB01A2FF197E5D01009DB749 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB01A2FE197E5D01009DB749 /* ResultViewController.swift */; };
+		CB01A301197E5D1A009DB749 /* ParamaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB01A300197E5D1A009DB749 /* ParamaViewController.swift */; };
 		CBB27503197CBA6A00016F29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB27502197CBA6A00016F29 /* AppDelegate.swift */; };
-		CBB27505197CBA6A00016F29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB27504197CBA6A00016F29 /* ViewController.swift */; };
 		CBB27508197CBA6A00016F29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBB27506197CBA6A00016F29 /* Main.storyboard */; };
 		CBB2750A197CBA6A00016F29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB27509197CBA6A00016F29 /* Images.xcassets */; };
 		CBB27516197CBA6A00016F29 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB27515197CBA6A00016F29 /* RestClientTests.swift */; };
@@ -25,10 +27,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB01A2FC197E5CEF009DB749 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		CB01A2FE197E5D01009DB749 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		CB01A300197E5D1A009DB749 /* ParamaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamaViewController.swift; sourceTree = "<group>"; };
 		CBB274FD197CBA6A00016F29 /* RestClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB27501197CBA6A00016F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB27502197CBA6A00016F29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CBB27504197CBA6A00016F29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBB27507197CBA6A00016F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBB27509197CBA6A00016F29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBB2750F197CBA6A00016F29 /* RestClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,10 +80,12 @@
 			isa = PBXGroup;
 			children = (
 				CBB27502197CBA6A00016F29 /* AppDelegate.swift */,
-				CBB27504197CBA6A00016F29 /* ViewController.swift */,
 				CBB27506197CBA6A00016F29 /* Main.storyboard */,
 				CBB27509197CBA6A00016F29 /* Images.xcassets */,
 				CBB27500197CBA6A00016F29 /* Supporting Files */,
+				CB01A2FC197E5CEF009DB749 /* RequestViewController.swift */,
+				CB01A2FE197E5D01009DB749 /* ResultViewController.swift */,
+				CB01A300197E5D1A009DB749 /* ParamaViewController.swift */,
 			);
 			path = RestClient;
 			sourceTree = "<group>";
@@ -208,8 +214,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBB27505197CBA6A00016F29 /* ViewController.swift in Sources */,
+				CB01A2FD197E5CEF009DB749 /* RequestViewController.swift in Sources */,
 				CBB27503197CBA6A00016F29 /* AppDelegate.swift in Sources */,
+				CB01A301197E5D1A009DB749 /* ParamaViewController.swift in Sources */,
+				CB01A2FF197E5D01009DB749 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +403,7 @@
 				CBB2751B197CBA6A00016F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CBB2751C197CBA6A00016F29 /* Build configuration list for PBXNativeTarget "RestClientTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +412,7 @@
 				CBB2751E197CBA6A00016F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

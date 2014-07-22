@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-489" y="431"/>
         </scene>
-        <!--View Controller-->
+        <!--Request View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RequestViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="129" y="431"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="Iob-zH-Z0j">
             <objects>
-                <viewController id="i3g-MT-jAH" sceneMemberID="viewController">
+                <viewController id="i3g-MT-jAH" customClass="ResultViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g8B-KS-TSF"/>
                         <viewControllerLayoutGuide type="bottom" id="Swe-uH-I2k"/>
@@ -140,10 +140,10 @@
             </objects>
             <point key="canvasLocation" x="781.5" y="169"/>
         </scene>
-        <!--View Controller-->
+        <!--Parama View Controller-->
         <scene sceneID="hdH-A2-S52">
             <objects>
-                <viewController id="TEq-uH-N9z" sceneMemberID="viewController">
+                <viewController id="TEq-uH-N9z" customClass="ParamaViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7eg-46-cQQ"/>
                         <viewControllerLayoutGuide type="bottom" id="8My-cp-agf"/>
