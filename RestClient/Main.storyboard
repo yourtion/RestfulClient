@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="185" width="320" height="295"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParamaCell" textLabel="miD-6m-sHl" detailTextLabel="dSX-XT-gfo" style="IBUITableViewCellStyleValue1" id="BS4-yo-sAP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParamCell" textLabel="miD-6m-sHl" detailTextLabel="dSX-XT-gfo" style="IBUITableViewCellStyleValue1" id="BS4-yo-sAP">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BS4-yo-sAP" id="AYR-O6-7Cf">
@@ -83,6 +83,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TEq-uH-N9z" kind="show" identifier="EditParamSegue" id="UWV-Ej-mRq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -95,8 +98,11 @@
                                 <state key="normal" title="Edit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="EditParam:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4t6-nq-Rlv"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paramas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-2r-EOO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Params" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-2r-EOO">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -111,8 +117,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="AddParama:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3nY-c1-s7G"/>
-                                    <segue destination="TEq-uH-N9z" kind="show" id="o7E-y8-0v9"/>
+                                    <segue destination="TEq-uH-N9z" kind="show" identifier="AddParamSegue" id="jiC-pR-P4W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -148,7 +153,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Run" id="feg-s4-iEz">
                             <connections>
                                 <action selector="RunRequest:" destination="vXZ-lx-hvc" id="dNn-dL-VS6"/>
-                                <segue destination="i3g-MT-jAH" kind="show" id="8TW-pf-pqI"/>
+                                <segue destination="i3g-MT-jAH" kind="show" identifier="ShowResultSegue" id="8TW-pf-pqI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -158,8 +163,8 @@
                         <size key="landscapeSize" width="480" height="320"/>
                     </simulatedScreenMetrics>
                     <connections>
-                        <outlet property="editParama" destination="GUB-Ja-HOE" id="aq8-6C-Mml"/>
-                        <outlet property="paramaTable" destination="3Bc-Ht-krC" id="Xxu-de-ZGl"/>
+                        <outlet property="editParam" destination="GUB-Ja-HOE" id="zuZ-mp-Aaq"/>
+                        <outlet property="paramTable" destination="3Bc-Ht-krC" id="UDE-3Q-IVC"/>
                         <outlet property="requestAction" destination="8p3-Yy-2e1" id="Sdp-JO-pRP"/>
                         <outlet property="requestURL" destination="V4l-Wp-zss" id="Vpf-pp-lGE"/>
                     </connections>
@@ -225,12 +230,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwr-A6-HN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.5" y="169"/>
+            <point key="canvasLocation" x="670" y="133"/>
         </scene>
-        <!--Parama View Controller-->
+        <!--Param View Controller-->
         <scene sceneID="hdH-A2-S52">
             <objects>
-                <viewController id="TEq-uH-N9z" customClass="ParamaViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TEq-uH-N9z" customClass="ParamViewController" customModule="RestClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7eg-46-cQQ"/>
                         <viewControllerLayoutGuide type="bottom" id="8My-cp-agf"/>
@@ -293,17 +298,29 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Eka-2H-K7X">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="URY-lh-z2E"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="URY-lh-z2E">
+                            <connections>
+                                <action selector="doneParam:" destination="TEq-uH-N9z" id="PLT-Ic-LQT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics">
                         <size key="portraitSize" width="320" height="480"/>
                         <size key="landscapeSize" width="480" height="320"/>
                     </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="doneBtn" destination="URY-lh-z2E" id="OOk-ds-Oa9"/>
+                        <outlet property="paramKey" destination="20x-rR-LeQ" id="4Dn-fy-OGc"/>
+                        <outlet property="paramValue" destination="GoU-03-qaf" id="gbR-Hl-Juc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Hy-y6-yb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781.5" y="710"/>
+            <point key="canvasLocation" x="670" y="711"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jiC-pR-P4W"/>
+    </inferredMetricsTieBreakers>
 </document>

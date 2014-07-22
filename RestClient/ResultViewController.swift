@@ -10,13 +10,15 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    var param = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Result"
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
