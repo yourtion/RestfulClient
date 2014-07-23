@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2E-cv-ezA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-489" y="431"/>
+            <point key="canvasLocation" x="-273" y="431"/>
         </scene>
         <!--Request View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -185,8 +185,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZJ-n5-sre">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-eb-3kD">
+                                <rect key="frame" x="20" y="73" width="280" height="29"/>
+                                <segments>
+                                    <segment title="Raw"/>
+                                    <segment title="Header"/>
+                                    <segment title="Body"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joH-ed-zTF">
+                                <rect key="frame" x="20" y="109" width="280" height="351"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -194,39 +202,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CZJ-n5-sre" firstAttribute="leading" secondItem="9Vh-H1-3qJ" secondAttribute="leading" constant="20" symbolic="YES" id="9ov-ov-ObH"/>
-                            <constraint firstAttribute="trailing" secondItem="CZJ-n5-sre" secondAttribute="trailing" constant="20" symbolic="YES" id="beK-tX-hQj"/>
-                            <constraint firstAttribute="bottom" secondItem="CZJ-n5-sre" secondAttribute="bottom" constant="20" symbolic="YES" id="epk-AD-X37"/>
-                            <constraint firstItem="CZJ-n5-sre" firstAttribute="top" secondItem="9Vh-H1-3qJ" secondAttribute="top" constant="20" symbolic="YES" id="wU9-gD-smp"/>
+                            <constraint firstAttribute="trailing" secondItem="aXf-eb-3kD" secondAttribute="trailing" constant="20" symbolic="YES" id="8E6-Ba-4di"/>
+                            <constraint firstAttribute="bottom" secondItem="joH-ed-zTF" secondAttribute="bottom" constant="20" symbolic="YES" id="GoI-74-zWq"/>
+                            <constraint firstItem="aXf-eb-3kD" firstAttribute="leading" secondItem="9Vh-H1-3qJ" secondAttribute="leading" constant="20" symbolic="YES" id="Hll-Gk-kDi"/>
+                            <constraint firstItem="aXf-eb-3kD" firstAttribute="top" secondItem="g8B-KS-TSF" secondAttribute="bottom" constant="9" id="STa-nW-isd"/>
+                            <constraint firstItem="joH-ed-zTF" firstAttribute="trailing" secondItem="aXf-eb-3kD" secondAttribute="trailing" id="Wqz-Tu-6QG"/>
+                            <constraint firstItem="aXf-eb-3kD" firstAttribute="leading" secondItem="joH-ed-zTF" secondAttribute="leading" id="hLC-dh-psD"/>
+                            <constraint firstItem="joH-ed-zTF" firstAttribute="top" secondItem="aXf-eb-3kD" secondAttribute="bottom" constant="8" symbolic="YES" id="rFi-iC-XT1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="CZJ-n5-sre"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="9ov-ov-ObH"/>
-                                <exclude reference="beK-tX-hQj"/>
-                                <exclude reference="epk-AD-X37"/>
-                                <exclude reference="wU9-gD-smp"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="CZJ-n5-sre"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="9ov-ov-ObH"/>
-                                <include reference="beK-tX-hQj"/>
-                                <include reference="epk-AD-X37"/>
-                                <include reference="wU9-gD-smp"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics">
                         <size key="portraitSize" width="320" height="480"/>
                         <size key="landscapeSize" width="480" height="320"/>
                     </simulatedScreenMetrics>
+                    <connections>
+                        <outlet property="resultText" destination="joH-ed-zTF" id="LE8-L4-WZO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwr-A6-HN7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +236,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20x-rR-LeQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Key" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20x-rR-LeQ">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>

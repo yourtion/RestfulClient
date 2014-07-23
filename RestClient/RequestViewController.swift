@@ -15,7 +15,7 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet var requestURL: UITextField!
     @IBOutlet var requestAction: UISegmentedControl!
     
-    var param = Array<Array<String>>()
+    var params = Array<Array<String>>()
     var selectParam = []
     var editingIndex = Int()
     
@@ -44,13 +44,13 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return self.param.count;
+        return self.params.count;
     }
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:UITableViewCell! = self.paramTable.dequeueReusableCellWithIdentifier("ParamCell")
          as UITableViewCell
-        let param = self.param[indexPath.row]
+        let param = self.params[indexPath.row]
         cell.textLabel.text = param[0] as String
         cell.detailTextLabel.text = param[1] as String
         return cell
@@ -58,7 +58,7 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         if(editingStyle == UITableViewCellEditingStyle.Delete) {
-            self.param.removeAtIndex(indexPath.row)
+            self.params.removeAtIndex(indexPath.row)
             self.paramTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
@@ -70,15 +70,33 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if segue!.identifier == "EditParamSegue" {
             let paramView:ParamViewController = segue!.destinationViewController as ParamViewController
             let indexPath = self.paramTable.indexPathForSelectedRow()
-            selectParam = self.param[indexPath.row] as NSArray
+            selectParam = self.params[indexPath.row] as NSArray
             paramView.param = selectParam
             paramView.edit = true
             editingIndex = indexPath.row
         }
-        if segue!.identifier == "ResultSegue" {
-            let paramView: ResultViewController = ResultViewController()
-            self.navigationController.pushViewController(paramView, animated: true)
-
+        if segue!.identifier == "ShowResultSegue" {
+            let resultView: ResultViewController = segue!.destinationViewController as ResultViewController
+            resultView.requestUrl = self.requestURL.text
+            resultView.requestParams = self.params
+            resultView.requestMethod = self.requestMethod()
         }
+    }
+    
+    func requestMethod () -> String {
+        var method = String()
+        switch self.requestAction.selectedSegmentIndex {
+        case 1:
+            method = "GET"
+        case 2:
+            method = "POST"
+        case 3:
+            method = "PUT"
+        case 4:
+            method = "DELETE"
+        default:
+            break
+        }
+        return method
     }
 }

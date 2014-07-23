@@ -40,9 +40,9 @@ class ParamViewController: UIViewController {
             println("Done")
             let requestView:RequestViewController = self.navigationController.viewControllers[self.navigationController.viewControllers.count - 2] as RequestViewController
             if (edit){
-                requestView.param[requestView.editingIndex] = [self.paramKey.text,self.paramValue.text]
+                requestView.params[requestView.editingIndex] = [self.paramKey.text,self.paramValue.text]
             }else{
-                requestView.param.append([self.paramKey.text,self.paramValue.text])
+                requestView.params.append([self.paramKey.text,self.paramValue.text])
             }
             requestView.paramTable.reloadData()
             self.navigationController.popViewControllerAnimated(true)

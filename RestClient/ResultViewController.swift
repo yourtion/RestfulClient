@@ -10,29 +10,23 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
-    var param = []
+    @IBOutlet weak var resultText: UITextView!
+    
+    var requestParams = Array<Array<String>>()
+    var requestUrl = String()
+    var requestMethod = String()
+    var paramDic = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Result"
-        
+        self.resultText.text = self.requestUrl
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
