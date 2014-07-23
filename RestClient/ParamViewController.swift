@@ -20,13 +20,13 @@ class ParamViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.title = "Param"
+        navigationItem.title = "Param"
     }
     
     override func viewWillAppear(animated: Bool) {
-        if (self.param.count > 0){
-            self.paramKey.text = self.param[0] as String
-            self.paramValue.text = self.param[1] as String
+        if (param.count > 0){
+            paramKey.text = param[0] as String
+            paramValue.text = param[1] as String
         }
     }
 
@@ -36,16 +36,16 @@ class ParamViewController: UIViewController {
     }
     
     @IBAction func doneParam(sender: UIBarButtonItem) {
-        if (self.paramKey.hasText() && self.paramValue.hasText()){
+        if (paramKey.hasText() && paramValue.hasText()){
             println("Done")
-            let requestView:RequestViewController = self.navigationController.viewControllers[self.navigationController.viewControllers.count - 2] as RequestViewController
+            let requestView:RequestViewController = navigationController.viewControllers[navigationController.viewControllers.count - 2] as RequestViewController
             if (edit){
-                requestView.params[requestView.editingIndex] = [self.paramKey.text,self.paramValue.text]
+                requestView.params[requestView.editingIndex] = [paramKey.text,paramValue.text]
             }else{
-                requestView.params.append([self.paramKey.text,self.paramValue.text])
+                requestView.params.append([paramKey.text,paramValue.text])
             }
             requestView.paramTable.reloadData()
-            self.navigationController.popViewControllerAnimated(true)
+            navigationController.popViewControllerAnimated(true)
         }
     }
 

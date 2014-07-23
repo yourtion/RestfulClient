@@ -21,8 +21,8 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.title = "Request"
+        
+        navigationItem.title = "Request"
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +31,11 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     @IBAction func EditParam(sender: UIButton) {
-        if(self.paramTable.editing){
-            self.paramTable.editing = false
+        if(paramTable.editing){
+            paramTable.editing = false
             sender.setTitle("Edit", forState: UIControlState.Normal)
         }else{
-            self.paramTable.editing = true
+            paramTable.editing = true
             sender.setTitle("Done", forState: UIControlState.Normal)
         }
     }
@@ -44,13 +44,13 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return self.params.count;
+        return params.count;
     }
 
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell:UITableViewCell! = self.paramTable.dequeueReusableCellWithIdentifier("ParamCell")
+        var cell:UITableViewCell! = paramTable.dequeueReusableCellWithIdentifier("ParamCell")
          as UITableViewCell
-        let param = self.params[indexPath.row]
+        let param = params[indexPath.row]
         cell.textLabel.text = param[0] as String
         cell.detailTextLabel.text = param[1] as String
         return cell
@@ -58,8 +58,8 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
         if(editingStyle == UITableViewCellEditingStyle.Delete) {
-            self.params.removeAtIndex(indexPath.row)
-            self.paramTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            params.removeAtIndex(indexPath.row)
+            paramTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
     
@@ -69,23 +69,24 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }
         if segue!.identifier == "EditParamSegue" {
             let paramView:ParamViewController = segue!.destinationViewController as ParamViewController
-            let indexPath = self.paramTable.indexPathForSelectedRow()
-            selectParam = self.params[indexPath.row] as NSArray
+            let indexPath = paramTable.indexPathForSelectedRow()
+            selectParam = params[indexPath.row] as NSArray
             paramView.param = selectParam
             paramView.edit = true
             editingIndex = indexPath.row
         }
         if segue!.identifier == "ShowResultSegue" {
             let resultView: ResultViewController = segue!.destinationViewController as ResultViewController
-            resultView.requestUrl = self.requestURL.text
-            resultView.requestParams = self.params
-            resultView.requestMethod = self.requestMethod()
+            resultView.requestUrl = requestURL.text
+            resultView.requestParams = params
+            resultView.requestMethod = requestMethod()
+            resultView.startRequest()
         }
     }
     
     func requestMethod () -> String {
         var method = String()
-        switch self.requestAction.selectedSegmentIndex {
+        switch requestAction.selectedSegmentIndex {
         case 1:
             method = "GET"
         case 2:
