@@ -30,23 +30,21 @@ class ResultViewController: UIViewController {
     }
     
     func startRequest() {
-        var url = NSURL(string: requestUrl)
-        var request = NSMutableURLRequest(URL: url)
+        let url = NSURL(string: requestUrl)
+        let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"
         let queue = NSOperationQueue()
-        let completion = { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            let res = response as NSHTTPURLResponse!
-            if (error) {
-                println(error)
+        let completion = { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+            if ((error) != nil) {
+                print(error)
                 return
             }
-            var error: NSError?
             var respon: AnyObject!
-            if (data) {
-                respon = NSString(data: data, encoding: UInt())
+            if ((data) != nil) {
+                respon = NSString(data: data!, encoding: UInt())
             }
             dispatch_async(dispatch_get_main_queue(), {
-                self.resultText.text = respon as String
+                self.resultText.text = respon as! String
             })
         }
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler: completion)

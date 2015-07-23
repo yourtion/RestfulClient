@@ -9,46 +9,27 @@
 /* Begin PBXBuildFile section */
 		CB01A2FD197E5CEF009DB749 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB01A2FC197E5CEF009DB749 /* RequestViewController.swift */; };
 		CB01A2FF197E5D01009DB749 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB01A2FE197E5D01009DB749 /* ResultViewController.swift */; };
+		CB15918A1B60972400EC894E /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1591891B60972400EC894E /* Launch Screen.xib */; };
 		CBB27503197CBA6A00016F29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB27502197CBA6A00016F29 /* AppDelegate.swift */; };
 		CBB2750A197CBA6A00016F29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBB27509197CBA6A00016F29 /* Images.xcassets */; };
-		CBB27516197CBA6A00016F29 /* RestClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB27515197CBA6A00016F29 /* RestClientTests.swift */; };
 		CBC80641197E990F00D684B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBC80640197E990F00D684B6 /* Main.storyboard */; };
 		CBEF2389197E668700D7DC25 /* ParamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF2388197E668700D7DC25 /* ParamViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CBB27510197CBA6A00016F29 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CBB274F5197CBA6A00016F29 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CBB274FC197CBA6A00016F29;
-			remoteInfo = RestClient;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		CB01A2FC197E5CEF009DB749 /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		CB01A2FE197E5D01009DB749 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		CB1591891B60972400EC894E /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		CBB274FD197CBA6A00016F29 /* RestClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBB27501197CBA6A00016F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBB27502197CBA6A00016F29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBB27509197CBA6A00016F29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CBB2750F197CBA6A00016F29 /* RestClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBB27514197CBA6A00016F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBB27515197CBA6A00016F29 /* RestClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientTests.swift; sourceTree = "<group>"; };
 		CBC80640197E990F00D684B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		CBEF2388197E668700D7DC25 /* ParamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CBB274FA197CBA6A00016F29 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBB2750C197CBA6A00016F29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -62,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				CBB274FF197CBA6A00016F29 /* RestClient */,
-				CBB27512197CBA6A00016F29 /* RestClientTests */,
 				CBB274FE197CBA6A00016F29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				CBB274FD197CBA6A00016F29 /* RestClient.app */,
-				CBB2750F197CBA6A00016F29 /* RestClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +58,7 @@
 		CBB274FF197CBA6A00016F29 /* RestClient */ = {
 			isa = PBXGroup;
 			children = (
+				CB1591891B60972400EC894E /* Launch Screen.xib */,
 				CBC80640197E990F00D684B6 /* Main.storyboard */,
 				CBB27502197CBA6A00016F29 /* AppDelegate.swift */,
 				CBB27509197CBA6A00016F29 /* Images.xcassets */,
@@ -94,23 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				CBB27501197CBA6A00016F29 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CBB27512197CBA6A00016F29 /* RestClientTests */ = {
-			isa = PBXGroup;
-			children = (
-				CBB27515197CBA6A00016F29 /* RestClientTests.swift */,
-				CBB27513197CBA6A00016F29 /* Supporting Files */,
-			);
-			path = RestClientTests;
-			sourceTree = "<group>";
-		};
-		CBB27513197CBA6A00016F29 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CBB27514197CBA6A00016F29 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -135,39 +98,18 @@
 			productReference = CBB274FD197CBA6A00016F29 /* RestClient.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CBB2750E197CBA6A00016F29 /* RestClientTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CBB2751C197CBA6A00016F29 /* Build configuration list for PBXNativeTarget "RestClientTests" */;
-			buildPhases = (
-				CBB2750B197CBA6A00016F29 /* Sources */,
-				CBB2750C197CBA6A00016F29 /* Frameworks */,
-				CBB2750D197CBA6A00016F29 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CBB27511197CBA6A00016F29 /* PBXTargetDependency */,
-			);
-			name = RestClientTests;
-			productName = RestClientTests;
-			productReference = CBB2750F197CBA6A00016F29 /* RestClientTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CBB274F5197CBA6A00016F29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = yourtion;
 				TargetAttributes = {
 					CBB274FC197CBA6A00016F29 = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					CBB2750E197CBA6A00016F29 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = CBB274FC197CBA6A00016F29;
 					};
 				};
 			};
@@ -185,7 +127,6 @@
 			projectRoot = "";
 			targets = (
 				CBB274FC197CBA6A00016F29 /* RestClient */,
-				CBB2750E197CBA6A00016F29 /* RestClientTests */,
 			);
 		};
 /* End PBXProject section */
@@ -197,13 +138,7 @@
 			files = (
 				CBB2750A197CBA6A00016F29 /* Images.xcassets in Resources */,
 				CBC80641197E990F00D684B6 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CBB2750D197CBA6A00016F29 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				CB15918A1B60972400EC894E /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,23 +156,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CBB2750B197CBA6A00016F29 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CBB27516197CBA6A00016F29 /* RestClientTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CBB27511197CBA6A00016F29 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CBB274FC197CBA6A00016F29 /* RestClient */;
-			targetProxy = CBB27510197CBA6A00016F29 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CBB27517197CBA6A00016F29 /* Debug */ = {
@@ -339,40 +258,6 @@
 			};
 			name = Release;
 		};
-		CBB2751D197CBA6A00016F29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RestClient.app/RestClient";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RestClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		CBB2751E197CBA6A00016F29 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RestClient.app/RestClient";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = RestClientTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -390,15 +275,6 @@
 			buildConfigurations = (
 				CBB2751A197CBA6A00016F29 /* Debug */,
 				CBB2751B197CBA6A00016F29 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CBB2751C197CBA6A00016F29 /* Build configuration list for PBXNativeTarget "RestClientTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CBB2751D197CBA6A00016F29 /* Debug */,
-				CBB2751E197CBA6A00016F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -25,8 +25,8 @@ class ParamViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         if (param.count > 0){
-            paramKey.text = param[0] as String
-            paramValue.text = param[1] as String
+            paramKey.text = param[0] as? String
+            paramValue.text = param[1] as! String
         }
     }
 
@@ -37,15 +37,17 @@ class ParamViewController: UIViewController {
     
     @IBAction func doneParam(sender: UIBarButtonItem) {
         if (paramKey.hasText() && paramValue.hasText()){
-            println("Done")
-            let requestView:RequestViewController = navigationController.viewControllers[navigationController.viewControllers.count - 2] as RequestViewController
+            print("Done")
+            let requestView:RequestViewController = navigationController!.viewControllers[navigationController!.viewControllers.count - 2] as! RequestViewController
+            let key :String = paramKey.text!
+            let value :String = paramValue.text!
             if (edit){
-                requestView.params[requestView.editingIndex] = [paramKey.text,paramValue.text]
+                requestView.params[requestView.editingIndex] = [key, value]
             }else{
-                requestView.params.append([paramKey.text,paramValue.text])
+                requestView.params.append([key, value])
             }
             requestView.paramTable.reloadData()
-            navigationController.popViewControllerAnimated(true)
+            navigationController!.popViewControllerAnimated(true)
         }
     }
 

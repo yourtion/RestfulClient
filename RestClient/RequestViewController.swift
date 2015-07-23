@@ -43,41 +43,41 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @IBAction func RunRequest(sender: UIBarButtonItem) {
     }
 
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return params.count;
     }
 
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        var cell:UITableViewCell! = paramTable.dequeueReusableCellWithIdentifier("ParamCell")
-         as UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell! = paramTable.dequeueReusableCellWithIdentifier("ParamCell") as? UITableViewCell
         let param = params[indexPath.row]
-        cell.textLabel.text = param[0] as String
-        cell.detailTextLabel.text = param[1] as String
+        cell.textLabel!.text = param[0] as String
+        cell.detailTextLabel!.text = param[1] as String
         return cell
     }
     
-    func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if(editingStyle == UITableViewCellEditingStyle.Delete) {
             params.removeAtIndex(indexPath.row)
             paramTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if segue!.identifier == "AddParamSegue" {
-            let paramView:ParamViewController = segue!.destinationViewController as ParamViewController
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var paramView:ParamViewController;
+        if segue.identifier == "AddParamSegue" {
+            paramView = segue.destinationViewController as! ParamViewController
         }
-        if segue!.identifier == "EditParamSegue" {
-            let paramView:ParamViewController = segue!.destinationViewController as ParamViewController
-            let indexPath = paramTable.indexPathForSelectedRow()
-            selectParam = params[indexPath.row] as NSArray
+        if segue.identifier == "EditParamSegue" {
+            paramView = segue.destinationViewController as! ParamViewController
+            let indexPath = paramTable.indexPathForSelectedRow
+            selectParam = params[indexPath()!.row] as NSArray
             paramView.param = selectParam
             paramView.edit = true
-            editingIndex = indexPath.row
+            editingIndex = indexPath()!.row
         }
-        if segue!.identifier == "ShowResultSegue" {
-            let resultView: ResultViewController = segue!.destinationViewController as ResultViewController
-            resultView.requestUrl = requestURL.text
+        if segue.identifier == "ShowResultSegue" {
+            let resultView: ResultViewController = segue.destinationViewController as! ResultViewController
+            resultView.requestUrl = requestURL.text!
             resultView.requestParams = params
             resultView.requestMethod = requestMethod()
             resultView.startRequest()
