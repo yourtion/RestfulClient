@@ -48,7 +48,9 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell! = paramTable.dequeueReusableCellWithIdentifier("ParamCell") as? UITableViewCell
+        guard let cell = paramTable.dequeueReusableCellWithIdentifier("ParamCell") else {
+            return UITableViewCell()
+        }
         let param = params[indexPath.row]
         cell.textLabel!.text = param[0] as String
         cell.detailTextLabel!.text = param[1] as String
@@ -70,10 +72,10 @@ class RequestViewController: UIViewController,UITableViewDelegate,UITableViewDat
         if segue.identifier == "EditParamSegue" {
             paramView = segue.destinationViewController as! ParamViewController
             let indexPath = paramTable.indexPathForSelectedRow
-            selectParam = params[indexPath()!.row] as NSArray
+            selectParam = params[indexPath!.row] as NSArray
             paramView.param = selectParam
             paramView.edit = true
-            editingIndex = indexPath()!.row
+            editingIndex = indexPath!.row
         }
         if segue.identifier == "ShowResultSegue" {
             let resultView: ResultViewController = segue.destinationViewController as! ResultViewController
